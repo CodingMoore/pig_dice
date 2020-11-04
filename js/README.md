@@ -6,7 +6,7 @@ Expect: ((p1Roll).click).toEqual("1-6");
 Test: "It will store output number as element in array1"
 Expect: ((p1Roll).click).toEqual([3, 2, 5]);
 
-Test: "It will push the sum of elements in array1 to array2"
+Test: "It will push the sum of elements in array1 to subtotal"
 Expect: ((p1Roll).click).toEqual(array1 = [3, 2, 5]) subtotal = "10"
 
 Test: "It will change subtotal to an empty array when current roll is equal to 1"
