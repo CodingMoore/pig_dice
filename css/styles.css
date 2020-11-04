@@ -1,3 +1,9 @@
 h1 {
   text-align: center;
 }
+#p2Roll {
+  display: none;
+}
+#p2Hold {
+  display: none;
+}

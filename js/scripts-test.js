@@ -18,6 +18,9 @@ function Score(sum) {
 
 //UI Logic
 $(document).ready(function() {
+  $("#p1TotalOutput").text("0");
+  $("#p1RollOutput").text("0");
+  $("#p1ScoreOutput").text("0");
   $("#p1Roll").click(function(event) {
     event.preventDefault();
     const p1Roll = (Math.floor(Math.random() * 6) + 1)
@@ -35,9 +38,12 @@ $(document).ready(function() {
     event.preventDefault();
     let p1Sum = RollSum(p1RollArray);
     $("#p1ScoreOutput").text(Score(p1Sum));
+    $("#p1Roll").toggle();
+    $("#p1Hold").toggle();
+    $("#p2Roll").toggle();
+    $("#p2Hold").toggle();
+    $("#p1TotalOutput").text("0");
+    $("#p1RollOutput").text("0");
   });
   
 });
-
-// currentTotal = old Score + p1Sum
-// new Score = current Total

@@ -19,3 +19,6 @@ Expect: (((p1Roll).click)=1)).toEqual(array1=[]);
 
 Test: "It will add total to score"
 Expect: ((p1Hold).click).toEqual(score = score + total);
+
+Test: "It will hide buttons for player one after clicking hold, show player two buttons and vice versa"
+Expect: ((p1Hold).click).toEqual(show p2Roll and P2Hold buttons) and (hide p1Roll and p1Hold buttons);
