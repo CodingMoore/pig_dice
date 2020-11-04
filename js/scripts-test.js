@@ -21,7 +21,12 @@ $(document).ready(function() {
   $("#p1Roll").click(function(event) {
     event.preventDefault();
     const p1Roll = (Math.floor(Math.random() * 6) + 1)
-    p1RollArray.push(p1Roll);
+    if (p1Roll === 1) {
+      p1RollArray = [0];
+      $("#p1RollOutput").text(p1Roll);
+    } else {
+      p1RollArray.push(p1Roll);
+    }
     let p1Sum = RollSum(p1RollArray);
     $("#p1RollOutput").text(p1Roll);
     $("#p1TotalOutput").text(p1Sum);
