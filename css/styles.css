@@ -7,3 +7,10 @@ h1 {
 #p2Hold {
   display: none;
 }
+h4 {
+  text-align: center;
+  display: none;
+}
+.jumbotron {
+  display: none
+}
