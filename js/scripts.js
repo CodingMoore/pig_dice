@@ -19,16 +19,6 @@ function RollSum2(array) {
   return sum2
 }
 
-function Score1(sum1) {
-  score1 += sum1;
-  return score1
-}
-
-function Score2(sum2) {
-  score2 += sum2;
-  return score2
-}
-
 //UI Logic
 $(document).ready(function() {
   $("#p1TotalOutput").text("0");
@@ -42,7 +32,7 @@ $(document).ready(function() {
     event.preventDefault();
     const p1Roll = (Math.floor(Math.random() * 6) + 1)
     if (p1Roll === 1) {
-      p1RollArray = [0];
+      p1RollArray = [];
       $("#p1RollOutput").text(p1Roll);
       $("#p1Roll").hide();
       $("#p1Hold").hide();
@@ -60,8 +50,9 @@ $(document).ready(function() {
   $("#p1Hold").click(function(event) {
     event.preventDefault();
     let p1Sum = RollSum1(p1RollArray);
-    $("#p1ScoreOutput").text(Score1(p1Sum));
-    if (Score1(p1Sum) >= 100) {
+    score1 += p1Sum
+    $("#p1ScoreOutput").text(score1);
+    if (score1 >= 100) {
       $("#playerName").text("Player 1");
       $(".jumbotron").show();
       $("#p1Roll").hide();
@@ -75,7 +66,7 @@ $(document).ready(function() {
       $("#p2Hold").show();
       $("#p1TotalOutput").text("0");
       $("#p1RollOutput").text("0");
-      p1RollArray = [0];
+      p1RollArray = [];
     }
   });
 
@@ -83,7 +74,7 @@ $(document).ready(function() {
     event.preventDefault();
     const p2Roll = (Math.floor(Math.random() * 6) + 1)
     if (p2Roll === 1) {
-      p2RollArray = [0];
+      p2RollArray = [];
       $("#p2RollOutput").text(p2Roll);
       $("#p2Roll").hide();
       $("#p2Hold").hide();
@@ -101,8 +92,9 @@ $(document).ready(function() {
   $("#p2Hold").click(function(event) {
     event.preventDefault();
     let p2Sum = RollSum2(p2RollArray);
-    $("#p2ScoreOutput").text(Score2(p2Sum));
-    if (Score2(p2Sum) >= 100) {
+    score2 += p2Sum
+    $("#p2ScoreOutput").text(score2);
+    if (score2 >= 100) {
       $("#playerName").text("Player 2");
       $(".jumbotron").show();
       $("#p1Roll").hide();
@@ -116,9 +108,8 @@ $(document).ready(function() {
       $("#p1Hold").show();
       $("#p2TotalOutput").text("0");
       $("#p2RollOutput").text("0");
-      p2RollArray = [0];
+      p2RollArray = [];
       p2Sum = 0;
     }
   });
-  
 });
